@@ -1,0 +1,12 @@
+2013-03-11 12:49:39,214 INFO LeapMain [main] Application started.
+2013-03-11 12:49:39,225 WARN LeapMain [main] Using default screen setup
+2013-03-11 12:49:39,457 INFO LeapGUI [main] Setting up GUI.
+2013-03-11 12:49:39,499 INFO LeapGUI [main] Look&Feel initialized.
+2013-03-11 12:49:40,055 INFO LeapGUI [main] Properties Loaded.
+2013-03-11 12:49:40,101 INFO LeapGUI [main] GUI correctly setup.
+2013-03-11 12:57:14,923 INFO LeapMain [main] Application started.
+2013-03-11 12:57:14,930 WARN LeapMain [main] Using default screen setup
+2013-03-11 12:57:15,161 INFO LeapGUI [main] Setting up GUI.
+2013-03-11 12:57:15,187 INFO LeapGUI [main] Look&Feel initialized.
+2013-03-11 12:57:15,829 INFO LeapGUI [main] Properties Loaded.
+2013-03-11 12:57:15,891 INFO LeapGUI [main] GUI correctly setup.

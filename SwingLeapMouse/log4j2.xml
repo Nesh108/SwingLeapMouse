@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn" name="OrcampLeap" packages="">
+  <appenders>
+    <File name="SwingLeapMouseLog" fileName="logs/SwingLeapMouse.txt">
+      <PatternLayout>
+        <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+      </PatternLayout>
+    </File>
+	<Console name="Console" target="SYSTEM_OUT">
+		<PatternLayout pattern="%d{HH:mm:ss:SSS} [%t]  %-5level %logger{36} : %msg%n"/>
+	</Console>
+  </appenders>
+  <loggers>
+    <root level="trace">
+      	<appender-ref ref="SwingLeapMouseLog" level="info"/>
+      	<appender-ref ref="Console"/>
+    </root>
+  </loggers>
+</configuration>

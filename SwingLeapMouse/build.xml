@@ -1,0 +1,56 @@
+<project name="SwingLeapMouse" default="all">
+                
+    <property name="build.dir" location="${basedir}/build"/>
+    <property name="leap.jar" location="${basedir}/lib/LeapJava.jar"/>
+    <property name="log4j-core" location="${basedir}/lib/log4j-core-2.0-beta4.jar"/>
+    <property name="log4j-api" location="${basedir}/lib/log4j-api-2.0-beta4.jar"/>
+	<property name="Leap.dll" location="${basedir}/Leap.dll"/>
+	<property name="LeapJava.dll" location="${basedir}/LeapJava.dll"/>
+		
+    <property name="SwingLeapMouse.jar" location="${build.dir}/SwingLeapMouse.jar"/>
+
+	<path id="libraries">
+	    <fileset dir="${basedir}/lib">
+	        <include name="*.jar"/>
+	    </fileset>
+	</path>
+       
+    <target name="setup">
+        <mkdir dir="${build.dir}"/>
+
+        <available property="leap.ok" file="${leap.jar}"/>
+        <available property="log-core.ok" file="${log4j-core}"/>
+        <available property="log-api.ok" file="${log4j-api}"/>
+        <available property="LeapDll.ok" file="${Leap.dll}"/>
+        <available property="LeapJDLL.ok" file="${LeapJava.dll}"/>
+    	
+        <fail unless="leap.ok" message="LeapJava.jar not found."/>
+    	<fail unless="log-core.ok" message="log4j-core-2.0-beta4.jar not found."/>
+        <fail unless="log-api.ok" message="log4j-api-2.0-beta4.jar not found."/>
+    	<fail unless="LeapDll.ok" message="Leap.dll not found."/>
+        <fail unless="LeapJDLL.ok" message="LeapJava.dll not found."/>
+    </target>
+    
+    <target name="all" depends="build, clean"/>
+
+    <target name="build" depends="jar"/>
+    
+    <target name="compile" depends="setup">
+        <mkdir dir="${build.dir}/classes"/>
+        <javac srcdir="${basedir}/" destdir="${build.dir}/classes" includeantruntime="false">
+        	<classpath refid="libraries" />
+        	 </javac>
+    </target>
+   
+    <target name="clean" depends="setup">
+        <delete dir="${build.dir}/classes"/>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar jarfile="${SwingLeapMouse.jar}" manifest="${basedir}/scripts/Manifest.MF">
+        	<fileset dir="${build.dir}/classes"/>
+        </jar>
+    </target>
+
+                   
+</project>

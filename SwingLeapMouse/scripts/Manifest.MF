@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: . LeapJava.jar log4j-api-2.0-beta4.jar log4j-core-2.0-beta4.jar Leap.dll LeapJava.dll
+Main-Class: LeapMain
